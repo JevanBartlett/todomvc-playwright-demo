@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                 // emit modern JS
+    "module": "NodeNext",                 // keep ESM syntax
+    "moduleResolution": "NodeNext",     // follow Node's ESM rules (file extensions, exports)
+    "moduleDetection": "force"          ,// treat every file as a module
+    "verbatimModuleSyntax": true,       // don't rewrite/remove your imports/exports
+    "strict": true,                     // full type safety
+    "esModuleInterop": true,            // smoother CJS interop when needed
+    "skipLibCheck": true,               // faster builds
+    "forceConsistentCasingInFileNames": true, // avoid case bugs cross-platform
+    "resolveJsonModule": true,          // allow importing JSON
+    "isolatedModules": true,            // file-by-file transpilation safety
+    "types": ["node", "@playwright/test"], // preload Node + Playwright types
+    "rootDir": ".",                     // include src + tests without path errors
+    "outDir": "dist"                    // only used if you ever emit
+  },
+  "include": ["src/**/*", "tests/**/*", "playwright.config.ts", "ts_experiments"],
+  "exclude": ["node_modules", "dist"]
+}

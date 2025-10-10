@@ -1,0 +1,19 @@
+{
+  "name": "js-and-ts-automation-work",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.6.2",
+    "dotenv": "^16.5.0",
+    "typescript": "^5.9.2"
+  }
+}
