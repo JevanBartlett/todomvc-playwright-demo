@@ -1,7 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: './src/tests',
   fullyParallel: true,           // Run tests in parallel (faster)
 //   forbidOnly: !!process.env.CI,  // Fail if test.only() left in CI
 //   retries: process.env.CI ? 2 : 0, // Retry failed tests in CI
@@ -9,7 +12,9 @@ export default defineConfig({
   reporter: 'html',               // HTML report for debugging
   
   use: {
-    baseURL: 'http://localhost:3000', // Change to your target URL
+    headless: false,
+    launchOptions: {slowMo: 500},
+    baseURL: 'https://demo.playwright.dev/todomvc/#/', // Change to your target URL
     trace: 'on-first-retry',          // Capture trace on failure
     screenshot: 'only-on-failure',    // Screenshot when tests fail
   },
