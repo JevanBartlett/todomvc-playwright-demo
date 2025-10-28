@@ -5,7 +5,7 @@ dotenv.config();
 
 export default defineConfig({
   testDir: './src/tests',
-  fullyParallel: true,           // Run tests in parallel (faster)
+  fullyParallel: false,           // Run tests in parallel (faster)
 //   forbidOnly: !!process.env.CI,  // Fail if test.only() left in CI
 //   retries: process.env.CI ? 2 : 0, // Retry failed tests in CI
 //   workers: process.env.CI ? 1 : undefined, // Single worker in CI
