@@ -10,7 +10,7 @@ const listTodos = [
     {todoText: "teagan also finds this dull"}
 ]
 
-test.describe( "some playwright tests", () =>{
+test.describe( "some playwright tests", {tag: "@smoke"} ,() =>{
 
 
 test('homePage is just page after navigate', async ({homePage})=> {
@@ -37,7 +37,7 @@ test('complete todo', async({homePage}) => {
     await todoPage.completeTodo({todoText: "test2"})
     const completedtodo = await todoPage.getcheckeditem({todoText: "test2"})
     expect(completedtodo).toHaveClass('completed')
-})
+});
 
 test('clear all complete', async({homePage}) => {
     const todoPage = new TodoPage(homePage)
@@ -47,7 +47,7 @@ test('clear all complete', async({homePage}) => {
     const listCount = await todoPage.getlistCount();
     expect(listCount).toBe(0)
 
-})
+});
 
 test('filter todos by active', async ({homePage}) => {
     const todoPage = new TodoPage(homePage)
@@ -58,9 +58,7 @@ test('filter todos by active', async ({homePage}) => {
     const active_Todos = await todoPage.getlistCount()
     expect(active_Todos).toBe(3)
 
-
-
-})
+});
 
 
 });
