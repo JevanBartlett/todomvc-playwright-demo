@@ -80,18 +80,6 @@ export class TodoPage {
   }
 
   async getlistCount(): Promise<number> {
-    try {
-      // Wait for Playwright's auto-waiting to stabilize the count
-      await this.visible_list.waitFor({ state: 'attached' });
-      // If there are no todos, catch the error and return 0
-    } catch (error) {
-      // If list doesn't exist, log it but continue
-      if (error instanceof Error) {
-        console.warn('List not found:', error.message);
-      }
-      // Return 0 if list doesn't exist
-      return 0;
-    }
     return await this.visible_list.count();
   }
 
