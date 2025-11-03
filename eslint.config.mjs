@@ -13,7 +13,6 @@ export default tseslint.config(
         tsconfigRootDir: process.cwd(),
       },
     },
-    plugins: { playwright },
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
@@ -25,5 +24,5 @@ export default tseslint.config(
   },
   { ignores: ['node_modules','dist','build','coverage','playwright-report','blob-report','test-results'] }
 );
-EOF
+
 

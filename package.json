@@ -1,15 +1,88 @@
 {
-  "name": "js-and-ts-automation-work",
+ 
+  "name": "todomvc-playwright-automation",
+ 
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+ 
+  "description": "Playwright test automation framework for TodoMVC demo",
+ 
   "type": "module",
-  "license": "ISC",
-  "description": "",
+ 
+  "scripts": {
+ 
+   
+  "dev": "playwright test --ui",
+ 
+   
+  "test": "playwright test",
+ 
+   
+  "test:headed": "playwright test --headed",
+ 
+   
+  "test:debug": "playwright test --debug",
+ 
+   
+  "test:file": "playwright test",
+ 
+   
+  "test:serial": "playwright test --workers=1",
+ 
+   
+  "test:ci": "playwright test --reporter=blob",
+ 
+   
+  "report": "playwright show-report",
+ 
+   
+  "codegen": "playwright codegen",
+ 
+   
+  "typecheck": "tsc --noEmit",
+ 
+   
+  "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+ 
+   
+  "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+ 
+   
+  "format:check": "prettier . --check",
+ 
+   
+  "format:write": "prettier . --write",
+ 
+   
+  "check": "npm run typecheck && npm run lint && npm run format:check",
+ 
+   
+  "clean": "shx rm -rf test-results playwright-report",
+ 
+   
+  "prepare": "husky"
+ 
+  },
+ 
+  "keywords": [
+ 
+   
+  "playwright",
+ 
+   
+  "automation",
+ 
+   
+  "testing",
+ 
+   
+  "typescript"
+ 
+  ],
+ 
+  "author": "Josh [Your Last Name]",
+ 
+  "license": "MIT",
+ 
   "devDependencies": {
     "@eslint/js": "^9.37.0",
     "@playwright/test": "^1.54.2",
@@ -20,9 +93,17 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-playwright": "^2.2.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-imports": "^4.3.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
